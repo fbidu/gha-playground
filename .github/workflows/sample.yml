@@ -22,3 +22,8 @@ jobs:
           env
           echo ${{env.WORKFLOW_VAR}}
           echo ${{env.STEP_VAR}}
+      - uses: actions/checkout@v2
+      - name: List files
+        run: ls
+      - name: Runs howdy
+        run: python sample.py
