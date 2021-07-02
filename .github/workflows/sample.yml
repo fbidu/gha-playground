@@ -10,6 +10,6 @@ jobs:
         run: |
           echo "hi"
           export PYTHON_VERSION=$(python --version)
-          echo "::set-env name=PYTHON_VERSION::$PYTHON_VERSION"
+          echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_ENV
       - name: Print Python Version
-        run: echo $PYTHON_VERSION
+        run: echo "${{env.PYTHON_VERSION}}" #Better work!
