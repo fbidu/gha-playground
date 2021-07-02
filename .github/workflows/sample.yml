@@ -8,6 +8,8 @@ jobs:
     env:
       WORKFLOW_VAR: "Hello from the workflow!"
     steps:
+      - name: List files
+        run: ls
       - name: Echo
         run: |
           echo "hi"
