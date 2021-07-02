@@ -1,0 +1,10 @@
+name: Our first pipeline!
+
+on: [push]
+
+jobs:
+  says-hi:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo
+        run: echo "hi"
