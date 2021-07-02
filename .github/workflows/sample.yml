@@ -5,6 +5,8 @@ on: [push]
 jobs:
   says-hi:
     runs-on: ubuntu-latest
+    env:
+      WORKFLOW_VAR: "Hello from the workflow!"
     steps:
       - name: Echo
         run: |
@@ -13,3 +15,10 @@ jobs:
           echo "PYTHON_VERSION=$PYTHON_VERSION" >> $GITHUB_ENV
       - name: Print Python Version
         run: echo "${{env.PYTHON_VERSION}}" #Better work!
+      - name: Print vars
+        env:
+          STEP_VAR: "hello from the environment!"
+        run: |
+          env
+          echo ${{env.WORKFLOW_VAR}}
+          echo ${{env.STEP_VAR}}
