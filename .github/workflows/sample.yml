@@ -10,5 +10,6 @@ jobs:
         run: |
           echo "hi"
           export PYTHON_VERSION=$(python --version)
+          echo "::set-env name=PYTHON_VERSION::$PYTHON_VERSION"
       - name: Print Python Version
         run: echo $PYTHON_VERSION
